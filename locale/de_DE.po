@@ -1,0 +1,215 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:account.configuration,write_off_journal:"
+msgid "Writeoff Journal"
+msgstr "Ausbuchungsjournal"
+
+msgctxt "field:account.configuration,write_off_threshold:"
+msgid "Writeoff Threshold"
+msgstr "Ausbuchungsdifferenz"
+
+msgctxt "field:account.invoice.pay_using_transaction.failed,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:account.invoice.pay_using_transaction.failed,message:"
+msgid "Message"
+msgstr "Nachricht"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,amount:"
+msgid "Amount"
+msgstr "Betrag"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,card_present:"
+msgid "Card is Present"
+msgstr "Karte vorhanden"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,company:"
+msgid "Company"
+msgstr "Unternehmen"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,credit_account:"
+msgid "Credit Account"
+msgstr "Habenkonto"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,csc:"
+msgid "Card Security Code (CVV/CVD)"
+msgstr "Karte Sicherheitscode (CVV/CVD)"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,currency_digits:"
+msgid "Currency Digits"
+msgstr "Währung (signifikante Stellen)"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "Expiry Month"
+msgstr "Verfallsmonat"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,expiry_year:"
+msgid "Expiry Year"
+msgstr "Verfallsjahr"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,gateway:"
+msgid "Gateway"
+msgstr "Gateway"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,invoice:"
+msgid "Invoice"
+msgstr "Rechnung"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,invoice_type:"
+msgid "Invoice Type"
+msgstr "Rechnungstyp"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,method:"
+msgid "Payment Gateway Method"
+msgstr "Zahlungsgatewaymethode"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,number:"
+msgid "Card Number"
+msgstr "Kartennummer"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,owner:"
+msgid "Card Owner"
+msgstr "Kartenbesitzer"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,party:"
+msgid "Party"
+msgstr "Parteien"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,payment_profile:"
+msgid "Payment Profile"
+msgstr "Zahlungsprofil"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,reference:"
+msgid "Reference"
+msgstr "Beleg-Nr."
+
+msgctxt "field:account.invoice.pay_using_transaction.start,swipe_data:"
+msgid "Swipe Card"
+msgstr "Karte durchziehen"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,transaction:"
+msgid "Transaction"
+msgstr "Transaktion"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,transaction_type:"
+msgid "Transaction Type"
+msgstr "Transaktionstyp"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,use_existing_card:"
+msgid "Use existing Card?"
+msgstr "Existierende Karte verwenden"
+
+msgctxt "field:account.invoice.pay_using_transaction.start,user:"
+msgid "Tryton User"
+msgstr "Benutzer"
+
+msgctxt "help:account.invoice.pay_using_transaction.start,card_present:"
+msgid "If the card is present and the card can be swiped"
+msgstr "Ob eine Karte vorhanden ist und durchgezogen werden kann"
+
+msgctxt "help:account.invoice.pay_using_transaction.start,csc:"
+msgid "CVD/CVV/CVN"
+msgstr "CVD/CVV/CVN"
+
+msgctxt "model:account.invoice.pay_using_transaction.failed,name:"
+msgid "Pay using Transaction Wizard"
+msgstr "Mit Transaktionsassistent bezahlen"
+
+msgctxt "model:account.invoice.pay_using_transaction.start,name:"
+msgid "Pay using Transaction Wizard"
+msgstr "Mit Transaktionsassistent bezahlen"
+
+msgctxt "model:ir.action,name:wizard_pay_using_transaction"
+msgid "Pay using Payment Transaction"
+msgstr "Über Zahlungstransaktion bezahlen"
+
+msgctxt "selection:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "01-January"
+msgstr "01-Januar"
+
+msgctxt "selection:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "02-February"
+msgstr "02-Februar"
+
+msgctxt "selection:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "03-March"
+msgstr "03-März"
+
+msgctxt "selection:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "04-April"
+msgstr "04-April"
+
+msgctxt "selection:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "05-May"
+msgstr "05-Mai"
+
+msgctxt "selection:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "06-June"
+msgstr "06-Juni"
+
+msgctxt "selection:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "07-July"
+msgstr "07-Juli"
+
+msgctxt "selection:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "08-August"
+msgstr "08-August"
+
+msgctxt "selection:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "09-September"
+msgstr "09-September"
+
+msgctxt "selection:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "10-October"
+msgstr "10-Oktober"
+
+msgctxt "selection:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "11-November"
+msgstr "11-November"
+
+msgctxt "selection:account.invoice.pay_using_transaction.start,expiry_month:"
+msgid "12-December"
+msgstr "12-Dezember"
+
+msgctxt "view:account.configuration:"
+msgid "Automatic Write Off"
+msgstr "Automatische Ausbuchung"
+
+msgctxt "view:account.invoice.pay_using_transaction.failed:"
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+msgctxt "view:account.invoice.pay_using_transaction.start:"
+msgid "Add Payment Profile"
+msgstr "Zahlungsprofil hinzufügen"
+
+msgctxt "view:account.invoice.pay_using_transaction.start:"
+msgid "Card Information"
+msgstr "Karteninformation"
+
+msgctxt "view:account.invoice.pay_using_transaction.start:"
+msgid "Pay using Payment Transaction"
+msgstr "Über Zahlungstransaktion bezahlen"
+
+msgctxt "view:account.invoice:"
+msgid "_Pay using Gateway"
+msgstr "Über _Zahlungsgateway bezahlen"
+
+msgctxt "wizard_button:account.invoice.pay_using_transaction,failed,end:"
+msgid "Ok"
+msgstr "OK"
+
+msgctxt "wizard_button:account.invoice.pay_using_transaction,start,end:"
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgctxt "wizard_button:account.invoice.pay_using_transaction,start,pay:"
+msgid "Ok"
+msgstr "OK"

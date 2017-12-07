@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+copyright notices and license terms. -->
+<data>
+    <xpath expr="/form" position="inside">
+        <separator id="writeoff" string="Automatic Write Off" colspan="4"/>
+        <label name="write_off_journal"/>
+        <field name="write_off_journal"/>
+        <label name="write_off_threshold"/>
+        <field name="write_off_threshold"/>
+        <newline/>
+    </xpath>
+</data>
