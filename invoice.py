@@ -77,6 +77,7 @@ class Invoice:
         :param payment_transaction: Active record of a payment transaction
         """
         Date = Pool().get('ir.date')
+        AccountMove = Pool().get('account.move')
         AccountMoveLine = Pool().get('account.move.line')
         AccountConfiguration = Pool().get('account.configuration')
 
@@ -86,6 +87,25 @@ class Invoice:
                 continue
 
             if line.account == self.account:
+                amount_to_pay = abs(self.amount_to_pay)
+                if (
+                    line.credit and
+                    line.credit > amount_to_pay and
+                    not line.amount_second_currency
+                ):
+                    # Split the payment line so remaining can be applied
+                    # to other invoices as well.
+                    total_payment = line.credit
+                    move = line.move
+                    move.state = 'draft'
+                    move.save()
+                    line.credit = amount_to_pay
+                    line.save()
+                    AccountMoveLine.copy([line], {
+                        'move': move,
+                        'credit': (total_payment - amount_to_pay)
+                    })
+                    AccountMove.post([move])
                 self.write(
                     [self], {'payment_lines': [('add', [line.id])]}
                 )
