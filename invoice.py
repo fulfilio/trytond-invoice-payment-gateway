@@ -80,6 +80,7 @@ class Invoice:
         AccountMove = Pool().get('account.move')
         AccountMoveLine = Pool().get('account.move.line')
         AccountConfiguration = Pool().get('account.configuration')
+        Reconciliation = Pool().get('account.move.reconciliation')
 
         config = AccountConfiguration(1)
         for line in payment_transaction.move.lines:
@@ -113,10 +114,13 @@ class Invoice:
                     # Reconcile lines to pay and payment lines from transaction.
                     # Write-off journal is required to write-off remaining
                     # balance.
-                    if self.amount_to_pay != Decimal('0'):
-                        write_off_journal = config.write_off_journal
-                    else:
+                    amount = Decimal('0.0')
+                    for line_ in self.lines_to_pay + self.payment_lines:
+                        amount += line_.debit - line_.credit
+                    if amount == Decimal('0.0'):
                         write_off_journal = None
+                    else:
+                        write_off_journal = config.write_off_journal
                     try:
                         AccountMoveLine.reconcile(
                             self.lines_to_pay + self.payment_lines,
@@ -125,7 +129,8 @@ class Invoice:
                         )
                     except UserError:
                         # If reconcilation fails, do not raise the error
-                        pass
+                        if line.reconciliation:
+                            Reconciliation.delete([line.reconciliation])
                 return line
         raise Exception('Missing account')
 
