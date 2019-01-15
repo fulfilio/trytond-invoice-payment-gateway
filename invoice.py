@@ -2,7 +2,6 @@
 from decimal import Decimal
 
 from trytond.pool import PoolMeta, Pool
-from trytond.exceptions import UserError
 from trytond.model import fields, ModelView
 from trytond.pyson import Eval, Bool, And, Or, Id, Not, If
 from trytond.rpc import RPC
@@ -80,9 +79,13 @@ class Invoice:
         AccountMove = Pool().get('account.move')
         AccountMoveLine = Pool().get('account.move.line')
         AccountConfiguration = Pool().get('account.configuration')
-        Reconciliation = Pool().get('account.move.reconciliation')
 
-        config = AccountConfiguration(1)
+        if Pool.test:
+            # Test has rollbacks and in those cases configuration id
+            # increases.
+            config, = AccountConfiguration.search([])
+        else:
+            config = AccountConfiguration(1)
         for line in payment_transaction.move.lines:
             if line.reconciliation:
                 continue
@@ -118,19 +121,16 @@ class Invoice:
                     for line_ in self.lines_to_pay + self.payment_lines:
                         amount += line_.debit - line_.credit
                     if amount == Decimal('0.0'):
-                        write_off_journal = None
-                    else:
-                        write_off_journal = config.write_off_journal
-                    try:
                         AccountMoveLine.reconcile(
                             self.lines_to_pay + self.payment_lines,
-                            journal=write_off_journal,
                             date=Date.today()
                         )
-                    except UserError:
-                        # If reconcilation fails, do not raise the error
-                        if line.reconciliation:
-                            Reconciliation.delete([line.reconciliation])
+                    elif config.write_off_journal:
+                        AccountMoveLine.reconcile(
+                            self.lines_to_pay + self.payment_lines,
+                            journal=config.write_off_journal,
+                            date=Date.today()
+                        )
                 return line
         raise Exception('Missing account')
 
